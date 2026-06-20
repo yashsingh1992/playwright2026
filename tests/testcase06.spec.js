@@ -15,7 +15,7 @@ test("pop up and iframe interaction", async ({page}) =>
         await frame.locator("[href*='lifetime-access'][class='new-navbar-highlighter']").click();
         const text = await frame.locator(".text h2 span").textContent();
         console.log(text);
-        await page.waitForTimeout(3000);
+        await page.waitForTimeout(6000);
 
 
 })
