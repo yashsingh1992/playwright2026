@@ -9,7 +9,7 @@ async function maximizeWindow(page) {
   });
 }
 
-test('playwright recommended locator', async ({ page }) =>
+test('@Sanity playwright recommended locator', async ({ page }) =>
 {
 
     await page.goto("https://rahulshettyacademy.com/angularpractice/");
