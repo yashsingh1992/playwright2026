@@ -1,4 +1,5 @@
 const {test, expect} = require('@playwright/test');
+const {LoginPageoginPage, LoginPage} = require('../page-objects/loginPage'); //importing login class methods/functions
 
 async function maximizeWindow(page) {
   const cdp = await page.context().newCDPSession(page);
@@ -8,7 +9,7 @@ async function maximizeWindow(page) {
     bounds: { windowState: 'maximized' },
   });
 }
-
+//test.describe.configure({mode:'parallel'})
 test('browser existing cookies required', async ({ browser }) =>
 {
 
@@ -17,10 +18,15 @@ test('browser existing cookies required', async ({ browser }) =>
    const context = await browser.newContext({ viewport: null });
    const page = await context.newPage();
    await maximizeWindow(page);
+   
    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
-   await page.locator("input#username").fill("rahulshetty");
-   await page.locator("input#password").fill("test123");
-   await page.locator("input#signInBtn").click();
+         const userName = page.locator("input#username");
+         const password = page.locator("input#password");
+         const signButton = page.locator("input#signInBtn");
+         await userName.fill("rahulshettyacademy");
+         await password.fill("Learning@830$3mK1");
+         await signButton.click();
+
    //playwright smartly wait for the error message to display
    console.log(await page.locator("[style*='block']").textContent());
    await expect(page.locator("[style*='block']")).toContainText("Incorrect");

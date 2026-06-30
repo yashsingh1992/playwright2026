@@ -14,6 +14,8 @@ const { defineConfig } = require('@playwright/test');
  */
 module.exports = defineConfig({
   testDir: './tests',
+  retries : 1,
+  workers : 3,
   // Uncomment to run only one file with `npx playwright test` (no path in command):
  //  testMatch: '**/testCase03.spec.js',
   timeout: 40 * 1000,

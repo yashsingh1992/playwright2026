@@ -8,8 +8,8 @@ test('login client with multiple webelements with one attribute', async ({ page 
     //page directly we dont have to load any data or cookies
 
     await page.goto("https://rahulshettyacademy.com/client/");
-    await page.locator("input#userEmail").fill("anshika@gmail.com");
-    await page.locator("input#userPassword").fill("Iamking@000");
+    await page.locator("input#userEmail").fill("yash.singh080892@gmail.com");
+    await page.locator("input#userPassword").fill("Yash@1234");
     await page.locator("input#login").click();
     await page.waitForTimeout(10000);
  //   await page.waitForLoadState('networkidle'); - flaky command
